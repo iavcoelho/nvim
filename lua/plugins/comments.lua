@@ -1,6 +1,7 @@
 return {
-  "folke/todo-comments.nvim",
-  cmd = { "TodoTrouble", "TodoTelescope" },
+  'folke/todo-comments.nvim',
+  dependencies = { 'nvim-lua/plenary.nvim', 'nvim-telescope/telescope.nvim', 'folke/trouble.nvim' },
+  cmd = { 'TodoTelescope' },
   config = true,
   -- stylua: ignore
   keys = {

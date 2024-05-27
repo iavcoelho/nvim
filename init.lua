@@ -45,7 +45,7 @@ require('lazy').setup({
 
       -- Useful status updates for LSP
       -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-      { 'j-hui/fidget.nvim',       opts = {} },
+      { 'j-hui/fidget.nvim', opts = {} },
 
       -- Additional lua configuration, makes nvim stuff amazing!
       'folke/neodev.nvim',
@@ -81,7 +81,7 @@ require('lazy').setup({
   },
 
   -- Useful plugin to show you pending keybinds.
-  { 'folke/which-key.nvim',  opts = {} },
+  { 'folke/which-key.nvim', opts = {} },
   {
     -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
@@ -157,8 +157,6 @@ require('lazy').setup({
     },
   },
 
-
-
   {
     -- Add indentation guides even on blank lines
     'lukas-reineke/indent-blankline.nvim',
@@ -179,13 +177,13 @@ require('lazy').setup({
       'nvim-treesitter/nvim-treesitter-textobjects',
     },
     build = ':TSUpdate',
-    config = function ()
-      require("nvim-treesitter.configs").setup({
-        highlight = {enable = "true", disable = {"rust"}},
-        ensure_installed = {"c", "python", "lua", "latex", "markdown","bash", "fish"},
-        indent = {enable = true},
-    })
-    end
+    config = function()
+      require('nvim-treesitter.configs').setup {
+        highlight = { enable = 'true', disable = { 'rust' } },
+        ensure_installed = { 'c', 'python', 'lua', 'latex', 'markdown', 'bash', 'fish' },
+        indent = { enable = true },
+      }
+    end,
   },
   { import = 'plugins' },
 }, {})
@@ -195,7 +193,7 @@ require('lazy').setup({
 -- NOTE: You can change these options as you wish!
 
 -- Set highlight on search
-vim.o.hlsearch = false
+vim.o.hlsearch = true
 
 -- Make line numbers default
 vim.wo.number = true
@@ -257,7 +255,6 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   group = highlight_group,
   pattern = '*',
 })
-
 
 -- document existing key chains
 require('which-key').register {
